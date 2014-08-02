@@ -1,0 +1,14 @@
+
+			<!-- LOGIN PAGE -->
+			<div class = "login" id = "loginBox">
+				<div class="textField">Please enter a Team Name and a Password to start the competition. 
+				If you have not logged in before, filling in the information below will register your team. 
+				If you have logged in before, that same information will log you back in.
+				Keep in mind passwords are stored in plain text, so do not use a password that is actually special.
+				</br>(hashed passwords are coming)
+				</div>
+				<input id = "teamName" placeholder="Team Name" onkeypress="loginEnter(event, this.form)"> </input>
+				<input type="password" id = "password" placeholder="Password" onkeypress="loginEnter(event, this.form)"></input>
+				<button id = "loginButton" onClick = "getTeamName()">Login</button>
+			</div>
+			<pre id="changeLog"></pre>

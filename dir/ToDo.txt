@@ -1,0 +1,50 @@
+/*
+Nick Evans
+Thilly.net
+1 Feb 2014
+*/
+
+ToDo:
+	
+	resources for problems
+		the programming contest traning manual - Programming challenges - Schapers book
+		project euler
+		codechef
+	
+	problem sets 
+		*Squares4 - Create Solution
+		*Squares5 - Create Solution
+		*Aliens - Create Better Solution
+		*Circle - Create Solution
+		
+	admin panel- 
+		add ability to moderate the contest
+			-add remove edit problems
+			-allow/disallow chat
+		have button to spawn new tester-tab
+		
+	user panel-
+		team profile (names an stuff)
+		fix the appearance of the links
+	
+	languages-
+		JavaScript -
+		Python -
+		Java -
+	
+	testing-
+		create a more verbose server logging system for higher debugging
+			queue size
+			messages per second
+			average turnaround
+			ping
+			long term memory watch
+	
+Eventually:
+	make pretty- css/background/links
+	refactor for speed and concurrency
+	EXTENSIFY
+	
+ALWAYS:	
+	more accurate logging- make more useful and less often
+	get rid of the kludgyness- its still really messy, clean it up

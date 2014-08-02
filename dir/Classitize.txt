@@ -1,0 +1,28 @@
+Contest
+	server
+	load
+	save
+	logging(class)
+	problemFiles[a]
+	Contestants[a](class)
+		Admin(subClass of Contestants)
+			admin commands
+			memory/logging/score
+			help/ban
+		Contestant
+			name
+			type
+			score
+			password
+			server/client/user communication handlers
+			submission(class)(new process){
+				language
+				code
+				file(class)
+					path
+					name
+					create/read/write/append handlers
+				compile/run/test
+				contestant communication handlers
+			}
+			

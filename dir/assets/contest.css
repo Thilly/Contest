@@ -1,0 +1,154 @@
+/*
+Nick Evans
+Thilly.net
+14 Dec 2013
+*/
+
+/* login splash screen */
+.login{
+	position: fixed;
+	width: 50%;
+	left: 65%;
+	bottom: 30%;
+	height: 50%;
+	border: 1px solid black;
+	margin: 0 0 0 -37.5%;
+	box-shadow: 10px 10px 16px #666666;
+	background-color: white;
+	border-radius:5px;
+	z-index: 1;
+}
+#teamName, #password, #loginButton{
+	width: 30%;
+	position:absolute;
+	bottom: 25%;
+	left: 10%;
+}
+#password{
+	left: 60%;
+}
+#loginButton{
+	left: 35%;
+	bottom:10%;
+}
+.textField{
+	position: absolute;
+	text-align: center;
+	margin: 10px;
+	bottom: 40%;
+	font-size:150%;
+}
+
+/* left box Things */
+.leftBar, .rightBar{
+	width: 10%;
+	height: 600px;
+	float: left;
+	background-color: lightblue;
+}
+
+.leftBar > a{
+	cursor: pointer;
+	font-size:1.5em;
+}
+
+/* chat box things */
+.rightBar{
+	width: 28%;
+	float: right;
+	position: relative;
+}
+#chatBox{
+	position: absolute;
+	width: 100%;
+	height:95%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+#chatBox #Thilly{/* rename the child to admin for extensibility */
+	color: #999900;
+	font-weight: bold;
+}
+#inputChat{
+	position: absolute;
+	height:4%;
+	width: 100%;
+	bottom: 0px;
+	left: 0px;
+	background-color: white;
+}
+
+/* center col things */
+.centerWrapper{
+	width: 60%;
+	float: left;
+	margin-left: 7px;
+}
+.Center{
+	margin: auto;
+	width: 100%;
+}
+#code{
+	height: 400px;
+	width:100%;
+}
+#team{
+	margin: auto;
+	height: 26px;
+	width:45%;
+	float:right;
+	text-align: center;
+	line-height: 26px;
+}
+.alert{
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+/* score */
+.teamTile, .problemTile{
+	float:left;
+	word-wrap:break-word;
+	overflow-y:hidden;
+	height:60px;
+	border-left: solid black 1px;
+	border-right: solid black 1px;
+	text-align: center;
+}
+.teamRow, .problemRow{
+	height:60px;
+	width:100%;
+	font-size:.75em;
+}
+.teamRow > #correct{
+background-color:#00FF00;
+}
+.teamRow > #wrong{
+background-color:#FF0000;
+}
+
+/* background */
+#changeLog{
+	width: 95%;
+	position: absolute;
+	z-index: -1;
+}
+pre{
+	overflow-x: hidden;
+	white-space: pre-wrap;
+}
+
+/* Memory */
+#memoryLog{
+	width: 100%;
+	height: 160px;
+	margin-top: 15px;
+	float: left;
+}
+/*Flags*/
+#aFlag{
+	width:100%;
+	float:left;
+}

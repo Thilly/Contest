@@ -1,0 +1,250 @@
+/*
+Nick Evans
+Thilly.net
+1 Jan 2013
+*/
+
+12 Feb 2014 -- v0.15 -- WhiteSpace is stupid
+	Since I hate whitespace and windows is different than linux as far as line endings are concerned. I made use of a library to check the output and not get hung up on the \n vs \r vs \lf. It was just dumb anyway. Also since diff is now much more robust, it was also pulled out of the main process so no blocking there. Also a tiny bit of QOL where it now gives number of wrong answers.
+
+Server:
+	Implemented proper diff should ignore all whitespace chars and only look at each word
+	Implemented color coded logging of user wrong answers. (red no - green yes)
+	Implemented logging.diff option to show comparison of user output vs answers 
+	Refactored diff to run as external process
+	Refactored readable savefile creation to accommodate the earlier object refactor
+	
+Client:
+	Refactored solutions, testing is now different than running
+	Implemented ability to see number of wrong answers
+
+8 Feb 2104 -- v0.14 -- Long live the BANHAMMER!
+	A few quality of life things tonight, some functionality in regards to checking out submissions easier and lastly kicking/banning users. I see no reason to ever ban, but it's functionality that should exist anyway. The assist is much nicer than navigating the FS to track down their latest submission just to take a gander at why it's wrong.
+
+Server:
+	Implemented ability to request a recent submission
+	Implemented ability to ban/delete a team
+	Fixed a bug with non-logged in teams being assigned garbage
+	Refactored ban/delete to not delete admin, misclicks are irritating
+
+Client:
+	Implemented ability for an admin to request last submission from a user
+	Implemented ability for a user to be kicked
+	Implemented ability for an admin to do the kicking
+	Refactored scoreboard to resize automatically
+
+
+7 Feb 2014 -- v0.13 -- Got some user time
+	Found and addressed a bug that came into play with a username involving a space. Fixed some content and quality of life things. Made the admin able to change different logs during the contest without bringing down server.
+
+Server:
+	Refactored compile function to allow for players to have spaces in names
+	Implemented ability to change logging object from client
+
+Client:
+	Refactored checkSelect function to work on mouse up so users can request the problem they are already looking at
+	Implemented ability to change logging object from client
+
+
+1 Feb 2014 -- v0.12 -- Quality of life enhancements
+	Instead of just a yes or no for the score, I wanted the runtimes to be visible in the admin panel. This way, some can be more right if there is a tie or anything. Double checked all testCases/answers against the contests. Still have to solve a few since I've lost some.
+	
+Server:
+	Refactored score to be runtime instead of boolean
+	
+Client:
+	Added a bunch more content and double checked most of the algorithms for accuracy
+	Refactored usage of score to reflect runtime instead of bool
+	
+
+30 Jan 2014 -- v0.11 -- Extensibility would be nice
+	I was seeing the problem with trying to keep everything working with indexed arrays, so before it got much larger, I chose to refactor now. So, I refactored damn near everything tonight in preparation to add templates to create new problems without just physically adding the files into the directory.
+	
+Server:
+	Refactored file objects as associative arrays (objects of objects for JS) for the ability to reference them all by problem name
+	Refactored teams, compilation, testing, messages, saving and loading to accommodate the new file objects
+	Refactored administrator from a static hardcoded type to a modifiable parameter
+	Implemented ability to have more than one admin at a time
+	
+Client:
+	Refactored admin panel, all scoring, submissions, and results to accommodate the new file objects
+	
+	
+29 Jan 2014 -- v0.10 -- Score tracking and paperless contest
+	A bunch of fiddly things to make it look like a real contest. Scores and also a full administrative scoreboard are now visible to the clients. CSS changed a bit to make it prettier. Also added the loading of the problem writeup and changelog into the webapp with the ability to 'hide' problems. So paperless contest :D 
+	
+Server:
+	Implemented relaying of scores back to client on successful turnin
+	Implemented relaying of entire contest status to the admin on change of state
+	Implemented relaying of problem writeup back to the client
+	Refactored problem writeup relaying to ignore folders to 'hide' problems from client
+	Fixed a minor bug in the disconnect
+		-if user disconnected from login screen would throw a caught error, not any more
+	Implemented dynamic serving of the changelog as a background image
+	
+Client:
+	Implemented ability to view each score
+	Implemented ability to view contest as a whole from admin perspective
+	Implemented ability to view total correct submissions and total wrong submissions on each problem
+	Adjusted CSS significantly to accommodate scores
+	Refactored chat window to have a max message limit (1000 currently)
+	Refactored logging to fully account for all message states
+	Implemented loading the problem writeup when the user selects a problem from the list
+	Refactored good turnin to wait for the code in the testing suite
+	Implemented dynamic receiving of the changelog as a background image
+	
+	
+25 Jan 2014 -- v0.9 -- Bug Fixededed
+	Fixed that goddamn file handler bug. It was in the streams not the file creation/read/appending. Closed the streams when child was done working or closed because of error.
+	
+Server:
+	Refactored the file handling into three separate functions
+	Refactored children to close streams
+
+Client:
+	Got no love this update
+	
+	
+24 Jan 2014 -- v0.8 -- Deployment testing is even more important
+	Tried to deploy the full suite on KU servers on the 22nd. Testers found a whole buncha race conditions for me. Compile was jumping ahead of file creation, streams were being opened before programs were running. It was a goddamn mess. However, since I had my little tester bots running through scouring every possible angle to break this thing. I was able to iron nearly everything out in about two days of lab time between classes. Time is good, latency is good, throughput is good. Will test for max concurrency soon. Only thing left to address is the max file issue.
+	
+Server:
+	Fixed bug related to compile/file creation race condition
+	Refactored compile into file creation callback
+	Fixed bug related to process socket timing out
+	Implemented further exception handling for sockets
+	Refactored streams to not attempt to push an empty chunk.
+
+Client:
+	Implemented segmentation fault warning.
+
+
+16 Jan 2014 -- v0.7 -- Testing is important too
+	Began creating a testing suite so I can start to stress test the application. One user poking around doesn't test anything outside of it kinda might probably work in practice. Test suite fully implemented, shit is HAWT. to use: login with a team name containing "Tester" the testing javascript will be loaded automatically and the script will start automatically as well.
+	
+Server:
+	Fixed some bugs that would crop up if a user logged out while a request was pending
+	
+Client:
+	Implemented a type of team (tester) this team gets served a new page of JS
+	Implemented an interval driven loop that tests all the expected functionality of the application
+	Implemented 9 different functions for testing the functionality of the application
+	Refactored additional JS serving to me more general
+	Refactored socket connections to be dynamic based on location application is hosted
+
+Known Bugs:
+	events.js: 72 Error: OK, open <filename of most recent submission>
+		Probably linked to too many file descriptors open. 
+		happens around 850ish files submitted by a single user
+
+		
+14 Jan 2014 -- v0.6 -- Click to Share! TOTES LOL! :D
+	Cleaned up memory log, it was especially kludgy. Finally got around to adding the chat into it. So far it's secure against special chars and whatnot, AFAICT.
+	
+Server:
+	Implemented memMsg in the logging object to determine if the memory should be logged in the console
+	Implemented chat service
+	
+Client:
+	Refactored admin memory monitoring
+	Implemented chat service
+	Refactored chat to accommodate ALL characters
+
+
+13 Jan 2014 -- v0.5 -- dat memory log ;)
+	Created a sexy little graphic with canvas to monitor memory usage in the admin panel. It shows currently used memory, total memory allocated to the process and the entire memory usage of the V8 JavaScript environment. It's built off of events so I should be able to make it modular enough to squeeze into any of my web based programs.
+
+Server:
+	Implemented memory messages to client
+	Refactored the memory logging function
+
+Client:
+	Implemented the ability to dynamically ask for additional JS files from the server.
+	Implemented a memory monitoring graph on the admin page
+	Fixed a bug relating to multiple event handlers
+
+	
+11 Jan 2014 -- v0.4 -- Sessions YAY :D
+	Sessions were implemented so users no longer have to log back in after refreshing the page or navigating away. Only when the tab is closed. I could use localStorage and keep a more persistent session if needed. Will shift fire as needed. The context of the pages (the raw HTML content) was taken away from index and now is served when actually needed. I'll see how this works out.
+	
+Server:
+	Implemented multiple contexts to be served from server
+	Refactored logging in to work with the different contexts
+	Created and Solved a bug with double logging in
+	
+Client:
+	Implemented multiple contexts within the same page
+	Implemented sessions for users
+	Implemented not losing data when server restarts
+	Refactored auto logging in when server restarts
+	Created and Solved a bug with double logging in
+	Added this changelog to the background of the initial login screen because it looks neat
+
+
+7 Jan 2014 -- v0.3 -- Consistency :D
+	Some work getting stuff to feel right on the server side of things. Some callbacks were taken advantage of. The god function compile() was broken up. Some quality of life things were added as well.
+
+	A memory leak was possibly identified but not located. heapUsed grows by about 1-4kb a sec, so might just be how node works with sockets and keep alives or something. Garbage collection gets most of it back, but not quite ALL of it. After garbage collection, its up by about 700 or so KB. Total heap only grows on new connections. RSS rarely grows, doesn't seem to correlate with anything.
+
+Server:
+	Refactored compile function since was getting god-function-y
+	Refactored output to use streams instead of stdout on the callback to grab any and all output possible even from a crash on the tested program
+	Fixed a a bug in the stdin of the child exec process
+		-Process had ended, stream was still feeding, stream got pissed there was no where to throw data.
+	Added some memory logging metrics to watch memory usage on server
+	Added colors to easily distinguish server logging
+	
+Client:
+	Tidied up the code a bit
+
+
+2 Jan 2014 -- v0.2 -- Lets keep it updated :D
+	Mostly feeling out the shape of the contest page to try and see where I want the different windows to go. Currently left(links), right(chat) and big block in center(code/alerts). A login view was added to make it a bit prettier and more obvious a user was actually logged in. A corollary of that was if the server goes down, it's not as much as an issue as it was. It's not even noticeable if quick. 
+	
+Server:
+	Streamlined the login process
+	Tidied up the code a bit	
+	
+Client:
+	Implemented a nicer login process with splash screen
+	Implemented place holder divs for links(left) and chat(right)
+	Changed re-attachment to server after crash
+	Tidied up the code a bit
+
+
+1 Jan 2014 -- v0.1 -- Lets make a changelog :D
+	A week or so after project started, changelog finally created. It began to get quite large and I wanted to remember everything I did so I made this change log. Additionally, I have a toDo list here so I don't forget what I want to add to this project and what needs to be fixed when the ideas crop up.
+
+Server:
+	Implemented file serving ability
+	Implemented finding all problems for current contest
+	Implemented sharing file names with connected users
+	Implemented receiving whole page of code
+	Implemented creating new files for each submission
+	Implemented compiling files 
+	Implemented sharing compile errors with connected user
+	Implemented running compiled files
+	Implemented testing submitted programs against correct values
+	Implemented sharing progress of testing with connected user
+	Implemented logging object
+	Implemented recording output to the saved submission
+	Implemented teams
+	Implemented scoring system
+	Implemented passwords for teams
+	Implemented saving contest state
+	Implemented loading contest state
+	Added run times to tested files
+	Implemented timeout as failed submission
+	Implemented readable view of contest state
+	Refactored fileName service to user
+
+Client:
+	Implemented retrieving of files from node
+	Implemented two-way communication with server
+	Implemented problem selection
+	Implemented problem submission
+	Implemented problem result logging
+	Implemented colors in result log (red-wrong, yellow-pending, green-success)
+	Implemented team selection
+	Implemented team login with password
+	
