@@ -1,0 +1,47 @@
+MENU
+
+	You just got paid and you are super hungry. You have a very particular taste but are so hungry you must eat as much as you can. Your plan is to go to a restaurant and order as much as possible from the menu starting with the best food but getting as much as you can.
+	
+	The menu at the restaurant you chose is as follows:
+	
+	Panda Toes			$2048
+	Toast				$1024
+	$100 Bill			$512
+	Something Else			$256
+	Water				$128
+	More Stuff			$64
+	Bread				$32
+	Paper Towels			$16
+	Un-Cooked Rice			$8
+	Ketchup				$4
+	Raw Potato			$2
+	Broccoli Stumps			$1
+
+	The input starts with how many pay days are you accounting for (N) then for the N pay days, how much did you set aside to feast (X). 
+	
+	The output will consist of one integer per pay day,  of how many menu items can you order considering your top down appetite?
+	
+LIMITS:
+	
+	N <= 1000; N = Integer
+	0 <= X <= 10000000; X = Integer
+
+SAMPLE INPUT:
+
+	3
+	13
+	34
+	600
+
+	
+SAMPLE OUTPUT:
+
+	3
+	2
+	4
+	
+EXPLANATION:
+
+	13 Dollars gets you: Un-cooked rice, ketchup, and some broccoli stumps, 3 menu items.
+	34 Dollars gets you: Bread and ketchup, 2 menu items.
+	600 Dollars gets you: $100 dollar bill, more stuff, paper towels, and some un-cooked rice.

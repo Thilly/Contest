@@ -1,0 +1,40 @@
+BILLIARDS
+
+	A pool hall was loosing membership and in an attempt to draw some more players back in held a tournament with a new score structure. The new score structure is based around a single great victory. Many sets (T) of 2 players will play each other in many (N) games. The winner for an entire set is the player who had the single greatest lead in one game.
+
+	Your job is to determine for many sets (T) which player won and by how much was the lead.
+
+	The input is started off with an integer representing how many sets were played (T). Following the set there is another integer representing how many games (N) for this particular set was played. Lastly for this one set there are N scores (S1 S2) representing the final score between player one and player two respectively.
+
+	The output should simply be 2 integers per line. Which player (1 or 2) won the game and by how much was the lead. The number of the winning game does not matter.
+
+LIMITS:
+	
+	0 < T <= 20; T = Integer
+	0 < N <= 1000; N = Integer
+	0 <= S1, S2 <= 10000000; S1, S2 = Integer
+
+SAMPLE INPUT:
+
+	2
+	3
+	5 20
+	15 10
+	12 13
+	5
+	89 134
+	90 110
+	140 82
+	112 106
+	88 90
+
+	
+SAMPLE OUTPUT:
+
+	2 15
+	1 58
+	
+EXPLANATION:
+
+	For the first set, player 2 beat player 1 by 15 points in the first game.
+	For the second set, player 1 beat player 2 by 58 points in the third game.

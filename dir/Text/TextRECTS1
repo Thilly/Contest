@@ -1,0 +1,33 @@
+RECTS1
+
+	Your job is to read a list of points and calculate the area formed by each rectangle constructed by the two points given. 
+
+	The input starts with how many rectangles are to be calculated (N), then you will be given two points per line (X1 Y1 X2 Y2). 
+
+	There is no particular order to the points. 
+
+	The output will consist of one number for each pair of points, representing the area that the rectangle takes up.
+
+LIMITS:
+	
+	0 < N <= 1000; N = Integer
+	-100 <= X,Y <= 100; X,Y = Integer
+
+SAMPLE INPUT:
+
+	3
+	0 0 1 1
+	-5 -5 5 5
+	7 -1 8 5
+	
+SAMPLE OUTPUT:
+
+	1
+	100
+	6
+	
+EXPLANATION:
+
+	A 1x1 rectangle has an area of 1.
+	A 10x10 rectangle has an area of 100.
+	A 1x6 rectangle has an area of 6.

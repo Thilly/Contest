@@ -1,0 +1,33 @@
+CUPCAKES
+
+	There is a baker who is more than happy to come up with an excuse to eat as many cupcakes as possible. What he does is choose a box that will fit as few possible cupcakes that leaves him with the most possible left over. If he cant completely fill a box, why should he sell it? Your job is to help him out. He wants to spend more time eating and less time planning.
+
+	The input will start with the number of cupcake orders (N) and then N rows of cupcakes (X) which is a single integer representing the amount of cupcakes made today. Your job is to find size of the box that leaves the baker with the most cupcakes that can't fit.
+
+	The output will consist of one number for each cupcake order, representing the size of the box.
+
+LIMITS:
+	
+	N <= 1000; N = Integer
+	0 <= X <= 10000000; X = Integer
+
+SAMPLE INPUT:
+
+	3
+	1
+	3
+	6
+	
+SAMPLE OUTPUT:
+
+	1
+	2
+	4
+	
+EXPLANATION:
+
+	When he only made 1 cupcake he has to sell it. A box of one, leaves him with zero unfortunately.
+	
+	When 3 cupcakes are made he can sell 2 and still have 1. Selling them in boxes of 1 will leave him with 0 cupcakes.
+	
+	When 6 cupcakes are made he should sell them in boxes of 4, leaving 2 for him to eat.

@@ -1,0 +1,78 @@
+TRAVEL
+
+	You like to travel very much. You plan some travel routes and want to know their lengths. You are going to make these calculations. But be careful, you wrote some down wrong so some of the routes are incorrect. There may be some misspelling in city names or there will be no road between some two consecutive cities in the route. Also remember that you hate to visit the same city twice during a single vacation. Even the last city should differ from the first. Two consecutive cities in the route should also be different. So you need to check these conditions for the given routes too. You will be given the list of all cities and all roads between them with their lengths. All roads are one-way. Then you will be given the list of your planned travel routes. For each route you should check whether it is correct and find its length in this case.
+
+	The input starts with an integer (N) the number of cities you plan to visit, the next line contains N city names each separated by a single space. 
+	
+	The following line contains the number of roads you mapped out between the cities (M). Then, the next M lines are the roads and distances. Each road is identified by two strings starting city and ending city (C1, C2) and then the mileage as an integer (X). These roads came right from the internet, and as we all know the internet is perfectly factual. There are no errors in the road list.
+	
+	The next line is how many routes you have planned out (P). The next P lines consist of how many cities you planned to visit (Q) with each city on the same line. All separated by spaces. This is where your excitement caused errors. You hurriedly wrote the cities in, so the route may not be possible for the reasons stated earlier.
+
+	You will write your mileage calculator to tell you the exact mileage for any possible routes as one integer per line. If the route is not possible simply put 'ERROR' on the line so you know to come back to it later.
+	
+LIMITS:
+	
+	0 < N <= 50; N = Integer
+	0 < M <= N*(N-1); M = Integer
+	0 < X < 20000; X = Integer
+	0 < P < 50; P = Integer
+	0 < Q < 50; Q = Integer
+	
+	All city names are less than 20 characters long
+
+SAMPLE INPUT:
+
+	5
+	Denver LA New-York Miami Seattle
+	9
+	Denver LA 560
+	LA New-York 7507
+	New-York Miami 1764
+	Miami Seattle 28
+	Seattle Miami 30
+	Miami New-York 1764
+	LA Denver 550
+	Seattle New-York 1736
+	New-York Seattle 1738
+	13
+	5 Denver LA New-York Miami Seattle
+	5 Seattle Miami New-York LA Denver
+	3 Denver LA Denver
+	2 LX New-York
+	3 New-York Seattle Miami
+	2 New-York Miami
+	3 Seattle New-York Miami
+	4 Denver LA Miami Seattle
+	2 Denver Seattle
+	1 Denver
+	2 Mumbai Deli
+	6 Denver LA New-York Miami Seattle New-York
+	2 Miami Miami
+	
+SAMPLE OUTPUT:
+
+	9859
+	ERROR
+	ERROR
+	ERROR
+	1768
+	1764
+	3500
+	ERROR
+	ERROR
+	0
+	ERROR
+	ERROR
+	ERROR
+	
+EXPLANATION:
+
+	The 2nd route is incorrect since there is no road from New-York to LA. Note however that inverse road from LA to New-York exists.
+	The 3rd route is incorrect since the first city coincides with the last one.
+	The 4th route is incorrect since there is no city with name LX (Probably mean LA but you misspelled this word).
+	The 8th route is incorrect since there is no road from Miami to LA.
+	The 9th route is incorrect since there is no road from Denver to Seattle.
+	The 10th route is correct. Note that a route composed of exactly one city is always correct provided that city name is written correctly.
+	The 11th route is incorrect since there are no cities with names Mumbai and Deli.
+	The 12th route is incorrect since city New-York is visited twice.
+	Finally the 13th route is incorrect since we have equal consecutive cities.

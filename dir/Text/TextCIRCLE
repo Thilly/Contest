@@ -1,0 +1,36 @@
+CIRCLE
+
+	A number of traffic cones have been placed on a circular racetrack to form an obstacle course. You are asked to determine the largest sized car that can navigate the course. For simplicity, the cones are assumed to have zero width and the car is perfectly circular and infinitely maneuverable. The track itself is the area between 2 concentric circles.
+	Formally, the course can be navigated by a car of radius C if there exists a closed loop around the center of the track which lies between the circles forming the track, and every point on the loop is at least C distance away from each cone and each boundary of the track.
+	
+	Input begins with an integer (T), the number of test cases. Each test case begins with 2 integers (r, R) representing the inner and outer radii. The racetrack is the area between those circles centered at (0,0). The next line of input contains one integer (N), the number of cones. N lines follow, each containing the coordinates of a cone. The coordinates are integers, and are guaranteed to lie within the track, and be distinct. Cases are separated by a blank line.
+	
+	For each test case, output on a single line the diameter of the largest car that can navigate the course, rounded to 2 decimal places.
+	
+	
+LIMITS:
+	
+	0 < T <= 50; T = Integer
+	0 < r < R <= 25000; r,R = Integer
+	0 <= N <= 500; N = Integer
+
+SAMPLE INPUT:
+
+	1
+	5 10
+	3
+	6 0
+	5 7
+	-2 -7
+	
+SAMPLE OUTPUT:
+
+	2.72
+	
+EXPLANATION:
+
+	The first cone (6, 0) is 1 away from the inner circle and 4 away from the outer edge.
+	The second cone (5, 7) is 3.60 away from the inner circle and 1.4 away from the outer edge.
+	The third cone (-2, -7) is 2.34 away from inner circle and 2.72 away from the outer edge.
+	
+	The third cone decides the largest size vehicle that can be driven around the track with the smallest distances.

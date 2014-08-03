@@ -1,0 +1,34 @@
+RECTS4
+
+Your task is to read a list of point pairs, logically construct rectangles and lastly determine if the rectangles can be arranged to completely fill a perfect square. The rectangles are each independent of each other, overlapping points do NOT change the shape of the rectangle. They can be rotated as necessary to fit into a square.
+
+The input will consist of one integer to determine how many test batches will be given (T). Then for each batch one integer to determine how many rectangles in that batch and lastly 4 integers per line that represent a single rectangle (X1 Y1 X2 Y2).
+
+The output will consist of a simple 'Yes' or 'No' to signify whether the square can be formed. If yes, print the area of the square formed.
+	
+LIMITS:
+	
+	0 < T <= 100; T = Integer
+	0 < N <= 1000; N = Integer
+	-100 <= X,Y <= 100; X,Y = Integer
+
+SAMPLE INPUT:
+
+	2
+	2
+	0 0 1 1
+	2 3 -1 2
+	2
+	0 0 1 2
+	1 1 3 2
+	
+SAMPLE OUTPUT:
+
+	No
+	Yes 4
+	
+EXPLANATION:
+
+	The first case gives two rectangles: a 1x1 and a 3x1. The two rectangles cannot perfectly fill a square without re-shaping the rectangles.
+	
+	The second case gives two rectangles: a 1x2 and a 2x1. They can be rearranged into a 4x4 square perfectly.

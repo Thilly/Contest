@@ -1,0 +1,41 @@
+CHOPSTICKS
+
+	Chopsticks do not need to be the same length to be used to eat. It's scientifically proven that there is a specific tolerance (D) before they are unusable. As long as the difference between two chopsticks length (L) is less than or equal to this well understood universal constant, it is a good stick to pair up and use. Of course everyone knows a chopstick can only be paired up once, so a single chopstick can not be in more than one set at the same time.
+	
+	Given a pile of chopsticks (N) see how many 'scientifically correct' pairs you can make.
+	
+	The input starts off with how many piles of chopsticks you have (T) on one line. Then for for each pile two space separated integers that represent how may sticks in the pile and the well understood universal constant (N,D) are on their own line. The next N lines contain one integer each which represents the length of a single chopstick (L).
+	
+	Your output should consist of a single integer representing how many pairs can be made out of the piles given.
+	
+LIMITS:
+	
+	0 < T <= 50; T = Integer
+	0 < N <= 100000; N = Integer
+	0 <= D <= 1000000000; D = Integer
+	0 < L <= 1000000000; L = Integer
+
+SAMPLE INPUT:
+
+	2
+	5 2
+	1
+	3
+	3
+	9
+	4
+	3 1
+	1
+	2
+	3
+	
+	
+SAMPLE OUTPUT:
+
+	2
+	1
+	
+EXPLANATION:
+
+	For the first pile of sticks, two pairs can be made, one with 1 and 3 length chopsticks and then one with 3 and 4 length chopsticks.
+	For the second pile of sticks, only one pair can be made which would be 1 and 2 OR 2 and 3, it cannot be both however.

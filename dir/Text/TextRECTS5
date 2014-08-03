@@ -1,0 +1,31 @@
+RECTS5
+
+Your task is to read a list of point pairs (X1, Y1, X2, Y2), logically construct rectangles and lastly determine if there is a path available between a start position of 0,0 and any of the corners of the 'universe' (+/- U, +/- U). You can only move up down left and right. Each move counts as one step. If there is a path available, you must determine how many steps to get to a corner of the universe. No rectangle will cover the 'entrance' (0,0) of the universe.
+
+The input will consist of one integer to determine how many test batches will be given (T). Then for each batch the first line will be 2 integers. One to determine how many rectangles in that batch (N) and also one integer to determine the size of the universe (U) and lastly 4 integers on N lines that represent a single rectangle (X1 Y1 X2 Y2).
+
+The output will consist of a simple 'Yes' or 'No' to signify whether the universe can be exited. If yes, print the length of the path.
+	
+LIMITS:
+	
+	0 < T <= 10; T = Integer
+	0 < U <= 100; U = Integer
+	0 < N <= 1000; N = Integer
+	-200 <= X1,Y1,X2,Y2 <= 200; X1,Y1,X2,Y2 = Integer
+
+SAMPLE INPUT:
+
+	2
+	5 100
+	99 99 100 100
+	-99 99 -100 100
+	-99 -99 -100 -100
+	99 -99 100 -100
+	24 20 78 15
+	1 4
+	1 1 1 2
+	
+SAMPLE OUTPUT:
+	
+	No
+	Yes 8

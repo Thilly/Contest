@@ -1,0 +1,40 @@
+ALIENS
+
+	The aliens living in outer space are very advanced in technology, intelligence and everything, except one, and that is Earthly TV. Each year they spend millions of quatloos in research, to watch our universally renowned human TV. Recently they invented a type of Ti-Vo which can instantly capture entire episodes while they are currently airing. 
+	
+	They are aware of all of our shows (N) and what times the show starts and stops (S, E). The sad part about the TV watching aliens and their Ti-Vo is that they must be on Earth to capture it and Earth is extremely toxic for them. So they only come to earth for one second (T) and leave immediately. They plan send many aliens (K) to try to get all the TV they can. Find out which plan (Q) is the best bet to record the most TV.
+	
+	Input starts off with how many shows are on TV (N), then the next N lines have the start and stop times for each episode (S, E) separated by one space. After N lines the aliens planned groups (Q) are listed. Then for Q lines there is the number of aliens (K) and which second of time (T) they each will be coming to the planet.
+	
+	You will output one integer per group of aliens representing how many episodes the whole group can download during their trips.
+	
+LIMITS:
+	
+	0 < N <= 100000; N = Integer
+	0 < Q <= 5000; Q = Integer
+	0 < K < 20; K = Integer
+	0 < S, E, T < 1000000000; S,E,T = Integer
+
+SAMPLE INPUT:
+
+	4
+	1 4
+	3 10
+	2 6
+	5 8
+	3
+	1 5
+	2 2 6
+	3 1 10 9
+	
+SAMPLE OUTPUT:
+
+	3
+	4
+	2
+	
+EXPLANATION:
+
+	For the first group, only one alien arrives at t = 5 and can download 3 recipes 2, 3, 4.
+	For the second group, two aliens arrive at t = 2 and 6. They can learn all 4 of the recipes.
+	For the third group, three aliens arrive at t = 1, 10 and 9. They can learn only two recipes, 1 and 2.

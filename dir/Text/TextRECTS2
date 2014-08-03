@@ -1,0 +1,35 @@
+RECTS2
+
+	Your job is to read a list of points. Logically construct rectangles for each pair of sequential points and calculate the total area of the 'chain' of rectangles.
+
+	The input starts with how many points are to be read in (N) then you will be given 1 point per line (X Y).
+
+	There is no particular order to the points. The output will consist of 1 number, how much total area is taken up by all of the rectangles. 
+
+You are not tasked with accounting for overlapping rectangles.
+
+LIMITS:
+	
+	0 < N <= 1000; N = Integer
+	-100 <= X,Y <= 100; X,Y = Integer
+
+SAMPLE INPUT:
+
+	4
+	0 0 
+	1 1
+	2 3
+	-1 2
+	
+SAMPLE OUTPUT:
+
+	6
+	
+EXPLANATION:
+
+	The 4 points create 3 rectangles, 
+	0,0 and 1,1
+	1,1 and 2,3
+	2,3 and -1,2
+	
+	Their respective areas are 1, 2, 3.

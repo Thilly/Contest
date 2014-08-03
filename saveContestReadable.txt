@@ -1,0 +1,22 @@
+Sat Aug 02 2014 19:32:29 GMT-0400 (Eastern Daylight Time)
+<TeamName> - successful turnins separated by ' - '
+Thilly - ALIENS - BILLIARDS - CHOPSTICKS - CUPCAKES - MAXCOUNT - MENU - RECTS1 - RECTS2 - RECTS3 - SUBGAME - TEST - THEGUIDE - TRAVEL
+SomeGuy - CUPCAKES - TEST
+AnotherGuy
+<probName> - <correct> - <attempted>
+ALIENS - 2 - 11
+BILLIARDS - 1 - 2
+CHOPSTICKS - 1 - 1
+CIRCLE - 0 - 0
+CUPCAKES - 2 - 2
+MAXCOUNT - 1 - 1
+MENU - 1 - 1
+RECTS1 - 1 - 1
+RECTS2 - 1 - 1
+RECTS3 - 1 - 1
+RECTS4 - 0 - 0
+RECTS5 - 0 - 0
+SUBGAME - 1 - 1
+TEST - 64 - 121
+THEGUIDE - 1 - 1
+TRAVEL - 1 - 1

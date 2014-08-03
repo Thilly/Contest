@@ -1,0 +1,31 @@
+THEGUIDE
+
+	There is a question that needs to be answered. Your task is to find the Answer to Life, the Universe, and Everything. More precisely... brute force through until you find the answer for everything.
+
+	Input a list of numbers (N) un-ending.
+
+	Output simply echo the list of numbers, one per line until you find 42, the answer for everything.
+
+LIMITS:
+	
+	-1000000 <= N <= 1000000	
+
+SAMPLE INPUT:
+
+	58
+	17
+	12
+	42
+	38
+	102
+	...
+	
+SAMPLE OUTPUT:
+
+	58
+	17
+	12
+	
+EXPLANATION:
+
+	Print out each number read in until the answer is found. As soon as the answer is found, stop. You can now go forward and think about what the question is.
